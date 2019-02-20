@@ -49,6 +49,13 @@ A contemplação da necessidade diferente para formatação é tratada [aqui](#t
     - O que for passado na String format deve estar contido nas chaves do seguinte dicionário:
         - ```{"y":"year","m":"month","d":"day","h":"hour","M":"minute","s":"seconds"}```
     - Quando estiver fazendo _parse_ da string passada como possível data, será constatado se o valor passado no campo equivalente é compatível. Ex: "dd/mm/yy" para "28/07/97" é compatível, o mesmo formato para "15/20/97" não é.
+- Na classe Projeto:
+    - Serão levantados erros se:
+        - uma instância de Pessoa não tiver no cargo "professor" ou "pesquisador"
+        - As informações básicas não estiverem devidamente preenchidas respeitando o tipo esperado de cada campo quando houver tentativa de iniciar o projeto.
+        - O coordenador tentar concluir o projeto sem ter antes adicionado pelo menos uma atividade.
+    - Serão levantados avisos se:
+        - O coordenador tentar iniciar o projeto após a data de início do projeto, ou seja, começar atrasado.
 
 ### Extensibilidade e reuso:
 As classes base(Pessoa e BaseClass) foram feitas de forma que a adição de novas funcionalidades é trivial, respeitando os retornos esperados de cada função determinadas nas classes base.
