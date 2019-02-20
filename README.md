@@ -1,5 +1,15 @@
-Funcionalidades
-------
+# Funcionalidades
+- [x] O sistema permite a adição/remoção de informações referentes aos projetos e atividades.
+- [x] Associação de usuários.
+- [x] Alteração do status
+
+### O sistema oferece as seguintes consultas:
+- [x] Consulta por usuário
+- [x] Consulta por projeto
+- [x] Consulta por atividade
+- [x] O sistema deve fornecer um relatório de projeto e atividades da unidade acadêmica.
+
+( O loop principal de execução do software administra uma lista contendo todos as instâncias criadas durante a execução, se um relatório geral for pedido, este iterará pelos elementos da lista, concatenando suas respectivas chamadas .relatorio a uma string resposta, e devolverá o relatório acumulado de todas as instâncias criadas.)
 
 # Classes
 ### BaseClass:
@@ -31,9 +41,11 @@ A ocasião em que fez-se necessário o polimorfismo foi na definição da funç�
 "dd/mm/yyyy hh:MM:ss"
 ```
 é preferível.
-A contemplação da necessidade diferente para formatação é tratada [aqui](#timestamp)
-Tratamento de Exceções
-
-Extensibilidade
-
-Reuso
+A contemplação da necessidade diferente para formatação é tratada [aqui](#Timestamp)
+### Tratamento de Exceções:
+- No geral:
+    - Serão checados os parâmetros de cada função, para ter certeza que o parâmetro passado é do tipo esperado.
+- Na classe Timestamp:
+    - O que for passado na String format deve estar contido nas chaves do seguinte dicionário:
+        - ```{"y":"year","m":"month","d":"day","h":"hour","M":"minute","s":"seconds"}```
+    - Quando estiver fazendo _parse_ da string passada como possível data, será constatado se o valor passado no campo equivalente é compatível. Ex: "dd/mm/yy" para "28/07/97" é compatível, o mesmo formato para "15/20/97" não é.
